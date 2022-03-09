@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_circle_overlay.xml" value="0.131" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_error_component.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_loading_background.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_loading_circle1.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_loading_circle2.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_review_hexagon.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_tab_indicator_round_corner.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/drawable_video_timestamp.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_baseline_arrow_back_30.xml" value="0.1195" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_baseline_bookmark_border_24.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_baseline_fullscreen_24.xml" value="0.1195" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1195" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_heart.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_heart_24.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_ign_logo.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_pause.xml" value="0.1195" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_play.xml" value="0.1195" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_profile.xml" value="0.20092592592592592" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_search.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_twitter.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/drawable/ic_twitter_outline.xml" value="0.118" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/activity_collection.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/activity_create_collection.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/activity_test.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/activity_video.xml" value="0.10739614994934144" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/fragment_activity.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/fragment_home.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/fragment_recycler_view.xml" value="0.17" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/fragment_search.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/fragment_video.xml" value="0.10739614994934144" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_details.xml" value="0.109375" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_gallery.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_gallery_item.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_header.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_item_large.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_quote.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_spacer.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_article_video.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_category_item.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_collection_activity_toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_collection_details.xml" value="0.16" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_collection_header.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_collection_item.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_collection_item_1.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_collection_item_large.xml" value="0.16" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_divider.xml" value="0.11548913043478261" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_error.xml" value="0.25" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_event_item.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_folder_item.xml" value="0.25" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_fragment_home_toolbar.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_loading.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_main_toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_network_state.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_profile_header.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_profile_item.xml" value="0.25" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_profile_toolbar.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_reel_video_item.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_regular_video.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_secondary_toolbar.xml" value="0.10916919959473151" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_tweet_collection.xml" value="0.10916919959473151" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_tweet_item.xml" value="0.25" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_video_controls.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_video_details.xml" value="0.21" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/layout/layout_video_toolbar.xml" value="0.22" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/BookTweet/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/drawable-v24/drawable_alert_dialog_dark.xml" value="0.25" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/drawable/drawable_alert_dialog_dark.xml" value="0.25" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/drawable/drawable_option_btn.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/drawable/drawable_option_text.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/drawable/drawable_progress.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/activity_faults.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/activity_question.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/activity_welcome.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/fragment_confirm_choice.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/fragment_messaage_dialog.xml" value="0.1334853090172239" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/layout_divider.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/layout_fault_card.xml" value="0.264" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/layout_fault_category.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/layout_fault_item.xml" value="0.264" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/layout_option_btn.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/GrabThat/app/src/main/res/layout/layout_question_card.xml" value="0.1" />
+        <entry key="..\:/Users/Logo/AndroidStudioProjects/TestProject/app/src/main/res/layout/activity_main.xml" value="0.10739614994934144" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
