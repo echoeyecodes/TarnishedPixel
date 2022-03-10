@@ -60,7 +60,8 @@ class ImageActivity : AppCompatActivity() {
                         }
                     }
                     val sum = matrix.mapIndexed { index, i -> kernel[index] * i }.sum()
-                    val average = (sum / kernel.size).toInt()
+                    val divisor = kernel.sum()
+                    val average = (sum / divisor).toInt()
                     copyBitmap.setPixel(i, j, average)
                 }
             }
