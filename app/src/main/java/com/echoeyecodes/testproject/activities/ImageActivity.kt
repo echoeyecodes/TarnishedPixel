@@ -62,13 +62,21 @@ class ImageActivity : AppCompatActivity() {
                             }
                         }
                     }
-                    val sum = matrix.mapIndexed { index, value -> kernel[index] * value }.sum()
-                    val divisor = kernel.sum()
-                    val average = (sum / divisor).toInt()
-                    newImagePixels[j * cols + i] = average
+                    val sum = matrix.mapIndexed { index, value ->
+                        val multiplier = kernel[index]
+
+                        val alpha = (((value shr 24 and 0xFF)))
+                        val red = ((value ushr 16 and 0xFF) * multiplier).toInt()
+                        val green = ((value ushr 8 and 0xFF) * multiplier).toInt()
+                        val blue = ((value and 0xFF) * multiplier).toInt()
+
+                        (alpha and 0xFF shl 24) or (red and 0xFF shl 16) or (green and 0xFF shl 8) or (blue and 0xFF)
+                    }.sum()
+                    newImagePixels[j * cols + i] = sum
                 }
             }
-            val copyBitmap = Bitmap.createBitmap(newImagePixels, cols, rows, Bitmap.Config.ARGB_8888)
+            val copyBitmap =
+                Bitmap.createBitmap(newImagePixels, cols, rows, Bitmap.Config.ARGB_8888)
             runOnUiThread {
                 Glide.with(this@ImageActivity).load(copyBitmap).into(imageView)
             }
