@@ -8,3 +8,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TestProject"
 include ':app'
+include ':java'
+include ':java'
+include ':java'
+include ':openCVLibrary'
+include ':openCVLibrary'

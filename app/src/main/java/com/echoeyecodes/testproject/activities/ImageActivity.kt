@@ -13,6 +13,13 @@ import com.echoeyecodes.testproject.utils.AndroidUtilities
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.opencv.android.OpenCVLoader
+import org.opencv.android.Utils
+import org.opencv.core.CvType
+import org.opencv.core.Mat
+import org.opencv.core.Scalar
+import org.opencv.core.Size
+import org.opencv.imgproc.Imgproc
 import kotlin.math.min
 
 class ImageActivity : AppCompatActivity() {
@@ -27,9 +34,50 @@ class ImageActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val bitmap = BitmapFactory.decodeResource(resources, R.drawable.image)
-            meanFilter(bitmap)
+//            meanFilter(bitmap)
+            if(OpenCVLoader.initDebug()){
+                blurImage(bitmap)
+            }
         }
 
+    }
+
+    private suspend fun blurImage(bitmap: Bitmap) {
+        withContext(Dispatchers.IO) {
+            val cols = bitmap.width
+            val rows = bitmap.height
+
+            val imageSrc = Mat()
+
+            Utils.bitmapToMat(bitmap, imageSrc)
+            val blurredImage = imageSrc.clone()
+
+            val size = 32.0
+
+            val rowStart = 0
+            val rowEnd = (0.5*rows).toInt()
+            val colStart = 0
+            val colEnd = (0.5*cols).toInt()
+
+            /**
+             * Then blurred will have the blurred region.
+             * This is because submat doesn't copy the data in blurred, but rather references it.
+             * So when the blur is applied it only blurs the parts in blurred referenced by mask.
+             * https://stackoverflow.com/a/26823577
+             */
+            val blurredPartition = blurredImage.submat(rowStart, rowEnd, colStart, colEnd)
+
+            val circleMask = Mat()
+            Imgproc.circle(circleMask, org.opencv.core.Point(rowEnd/2.0, rowEnd/2.0), rowEnd/2, Scalar(1.0))
+            Imgproc.blur(blurredPartition, blurredPartition, Size(size, size))
+            blurredPartition.copyTo(blurredImage, circleMask)
+
+            val copy = Bitmap.createBitmap(blurredImage.width(), blurredImage.height(), Bitmap.Config.ARGB_8888)
+            Utils.matToBitmap(blurredImage, copy)
+            runOnUiThread {
+                Glide.with(this@ImageActivity).load(copy).into(imageView)
+            }
+        }
     }
 
     private suspend fun meanFilter(bitmap: Bitmap) {
@@ -47,12 +95,12 @@ class ImageActivity : AppCompatActivity() {
             bitmap.getPixels(imagePixels, 0, cols, 0, 0, cols, rows)
             for (i in 0 until cols) {
                 for (j in 0 until rows) {
-                    val startCoord = Point(i - step, j - step)
-                    val endCoord = Point(i + step, j + step)
+                    val startCoord = Point(j - step, i - step)
+                    val endCoord = Point(j + step, i + step)
 
                     val matrix = ArrayList<Int>()
-                    for (_col in startCoord.x..endCoord.x) {
-                        for (_row in startCoord.y..endCoord.y) {
+                    for (_col in startCoord.y..endCoord.y) {
+                        for (_row in startCoord.x..endCoord.x) {
                             if (_row < 0 || _row >= rows || _col < 0 || _col >= cols) {
                                 //out of matrix bounds
                                 matrix.add(0)
@@ -62,16 +110,23 @@ class ImageActivity : AppCompatActivity() {
                             }
                         }
                     }
-                    val sum = matrix.mapIndexed { index, value ->
-                        val multiplier = kernel[index]
 
-                        val alpha = (((value shr 24 and 0xFF)))
-                        val red = ((value ushr 16 and 0xFF) * multiplier).toInt()
-                        val green = ((value ushr 8 and 0xFF) * multiplier).toInt()
-                        val blue = ((value and 0xFF) * multiplier).toInt()
+                    val currentPixel = imagePixels[j * cols + i]
+                    var alpha = currentPixel shr 24 and 0xFF
+                    var red = currentPixel ushr 24 and 0xFF
+                    var blue = currentPixel ushr 8 and 0xFF
+                    var green = currentPixel and 0xFF
 
-                        (alpha and 0xFF shl 24) or (red and 0xFF shl 16) or (green and 0xFF shl 8) or (blue and 0xFF)
-                    }.sum()
+                    matrix.forEachIndexed { index, value ->
+                        val multiplier = 1 / 9f
+
+                        alpha += value shr 24 and 0xFF
+                        red += ((value ushr 16 and 0xFF) * multiplier).toInt()
+                        green += ((value ushr 8 and 0xFF) * multiplier).toInt()
+                        blue += ((value and 0xFF) * multiplier).toInt()
+
+                    }
+                    val sum = ((alpha) shl 24) or ((red) shl 16) or ((green) shl 8) or (blue)
                     newImagePixels[j * cols + i] = sum
                 }
             }
