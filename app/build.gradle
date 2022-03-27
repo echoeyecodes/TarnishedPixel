@@ -90,7 +90,6 @@ dependencies {
 
     implementation 'org.commonmark:commonmark:0.18.0'
 
-    implementation "com.google.android.exoplayer:exoplayer-core:$exo_version"
-    implementation "com.google.android.exoplayer:exoplayer-dash:$exo_version"
-    implementation "com.google.android.exoplayer:exoplayer-ui:$exo_version"
+    implementation "org.jetbrains.kotlinx:multik-api:0.1.1"
+    implementation "org.jetbrains.kotlinx:multik-default:0.1.1"
 }
