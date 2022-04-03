@@ -1,7 +1,7 @@
 package com.echoeyecodes.testproject.activities
 
-import android.graphics.*
-import android.graphics.Point
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,16 +13,15 @@ import com.echoeyecodes.testproject.utils.AndroidUtilities
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.jetbrains.kotlinx.multik.api.d2arrayIndices
-import org.jetbrains.kotlinx.multik.api.mk
-import org.jetbrains.kotlinx.multik.ndarray.operations.map
 import org.opencv.android.OpenCVLoader
 import org.opencv.android.Utils
-import org.opencv.core.*
+import org.opencv.core.Core
 import org.opencv.core.CvType.*
+import org.opencv.core.Mat
+import org.opencv.core.Scalar
+import org.opencv.core.Size
 import org.opencv.imgproc.Imgproc
-import java.util.*
-import kotlin.collections.ArrayList
+
 
 class ImageActivity : AppCompatActivity() {
 
@@ -45,34 +44,36 @@ class ImageActivity : AppCompatActivity() {
     }
 
     private fun alphaBlend(imageSrc:Mat, blurredImage: Mat, blurredMask: Mat): Mat{
+
+        val total = imageSrc.width() * imageSrc.height()
+        val channels = imageSrc.channels()
+        val size = total * channels
+
+        val array = FloatArray(size)
+        val array1 = FloatArray(size)
+        val array2 = FloatArray(size)
+
+        val array3 = FloatArray(size)
+        imageSrc.convertTo(imageSrc, CV_32F)
+        blurredImage.convertTo(blurredImage, CV_32F)
+        blurredMask.convertTo(blurredMask, CV_32F)
+
         val destination = Mat(imageSrc.size(), imageSrc.type())
 
-//        val scalarDivide = Mat(blurredMask.size(), blurredMask.type())
-//        Core.divide(blurredMask, Scalar.all(255.0), scalarDivide)
-//
-//        val scalarAdd = Mat(blurredImage.size(), blurredImage.type())
-//        Core.add(blurredMask, Scalar.all(1.0), scalarAdd)
-//
-//        val first = scalarDivide.mul(blurredImage)
-//        val second = scalarAdd.mul(imageSrc)
-//
-//        Core.add(first, second, destination)
-//
-//        return destination
+        imageSrc.get(0,0, array)
+        blurredImage.get(0,0, array1)
+        blurredMask.get(0,0, array2)
 
-        for (col in 0 until destination.cols()){
-            for (row in 0 until destination.rows()){
-                val pixel = imageSrc.get(row, col)
-                val blurredPixel = blurredImage.get(row, col)
-                val blurVal = blurredMask.get(row, col)[0] / 255
+        for (index in 0 until size){
+            val pixel = array[index]
+            val blurredPixel = array1[index]
+            val blurVal = (array2[index]) / 255.0f
 
-                val newPixelValue = pixel.mapIndexed { index, value ->
-                    (blurVal * blurredPixel[index]) + ((1.0f - blurVal) * value)
-                }.toDoubleArray()
-
-                destination.put(row, col, *newPixelValue)
-            }
+            val newValue = ((blurVal * blurredPixel) + ((1.0f - blurVal) * pixel))
+            array3[index] = newValue
         }
+        destination.put(0,0, array3)
+        destination.convertTo(destination, CV_8UC3)
         return destination
     }
 
@@ -82,7 +83,7 @@ class ImageActivity : AppCompatActivity() {
 
             Utils.bitmapToMat(bitmap, imageSrc)
 
-            val innerMask = Mat.zeros(imageSrc.size(), CV_8UC1)
+            val innerMask = Mat.zeros(imageSrc.size(), imageSrc.type())
             //thickness set to -1 for inner fill
             Imgproc.circle(
                 innerMask,

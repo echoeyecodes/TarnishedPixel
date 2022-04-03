@@ -10,6 +10,8 @@
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:theme="@style/Theme.BookTweet">
         <activity
             android:name=".activities.ImageActivity"
